@@ -14,11 +14,19 @@ To run only unit tests: mvn test
 To run integration tests: mvn failsafe:integration-test@integration
 To run Spring Boot application: mvn spring-boot:run
 
-After running open Swagger UI for documentation: http://localhost:8080/swagger-ui/ 
+After running you can open Swagger UI for documentation: http://localhost:8080/swagger-ui/ 
 
 Link for Postman collection for the API: https://www.getpostman.com/collections/daf8b7ef0e50dd56bb23 
 
 # Project implementation details
+# Details and assumption
+I've assumed that a bank account must belong to a user and to a bank branch.
+A bank branch contains all the details of a bank agency (location, opening time, closing time and a list of its working days). Times of a bank branch are saved in UTC.
+A user can create multiple bank account of "OTHERS" type, but only one of type "SAVINGS".
+The creation date time of a bank account is received from the client containing also the offset. The date time object is converted into UTC time by the server for comparision of given requirements.
+
+Note: Another option for comparision of given requiremenets of the creation time of a bank account would've been to use the current date time of the server, but it would've been hard to perform integration testing for this feature.
+
 # Entities details
 User {username, password} -> entity responsible for saving a user into database
 
