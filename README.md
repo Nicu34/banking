@@ -9,10 +9,10 @@ For persistence layer I've used H2 and JPA.
 For unit / integration testing I've used Junit5.
 
 # To Run:
-mvn clean install 
-To run only unit tests: mvn test 
-To run integration tests: mvn failsafe:integration-test@integration
-To run Spring Boot application: mvn spring-boot:run
+-> mvn clean install
+-> To run only unit tests: mvn test
+-> To run integration tests: mvn failsafe:integration-test@integration
+-> To run Spring Boot application: mvn spring-boot:run
 
 After running you can open Swagger UI for documentation: http://localhost:8080/swagger-ui/ 
 
