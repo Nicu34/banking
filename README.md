@@ -46,7 +46,7 @@ A bank account must belong to a Bank Branch.
 /user/authenticate - used for authenticating a user. A JWT authorization token is returned which must be used for authorization by putting it into the Authorization header with value "Bearer <received authorization token>
   
 /banking/createAccount - used for creating a bank account. A user can create multiple bank accounts of OTHERS type, but can create only one account of SAVINGS type. 
-Creation date time is sent alongside its offset, but the server converts the time to UTC time for persisting and business logic. Valid Authorization header needs to be present on request.
+Creation date time is sent alongside its offset, but the server converts the time to UTC time for persisting and business logic. Valid Authorization header needs to be present on request. A bank account is tied to a user and a bank branch. Requirements validation of a bank account will be performed by using bank branch's data.
 
 /banking/getAccounts - used for retrieving the bank accounts of a User. Valid Authorization header needs to be present on request.
 
